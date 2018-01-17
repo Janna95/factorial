@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Factorial</title>
+</head>
+
+<body>
+    <p>Please, enter a number to find out it's factorial </p>
+    <input type="number" id="Numb">
+    <button onclick="Factorial()">Check</button><br>
+    <p>The value is: </p>
+    <p id="Result"></p>
+
+    <script>
+        function Factorial() {
+            var n = document.getElementById("Numb").value;
+            var result = 1;
+            // do {
+            //     function Calculate(n) {
+            //         result = n * Calculate(n - 1);
+            //         n = n - 1;
+            //     }
+            // }
+            // while (n >= 1);
+
+            function Calculate(n) {
+                if (n > 1) {
+                    result = n * Calculate(n - 1);
+                }
+
+                return result;
+            }
+
+
+            Calculate(n);
+            document.getElementById("Result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
